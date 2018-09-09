@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5oX-Tf-Oj8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Stocks View Controller-->
+        <scene sceneID="8cA-MS-pXY">
+            <objects>
+                <viewController id="5oX-Tf-Oj8" customClass="StocksViewController" customModule="TestCurrency" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yt9-eK-8Ol">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="Hgp-mD-3qS">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem id="8lv-Va-iE0">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="baseline_refresh" id="ybF-uY-4n6">
+                                            <connections>
+                                                <action selector="updateStocks:" destination="5oX-Tf-Oj8" id="DST-km-3tr"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xao-me-35i">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="5oX-Tf-Oj8" id="tQR-q8-dY3"/>
+                                    <outlet property="delegate" destination="5oX-Tf-Oj8" id="AmE-fG-JZN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hgp-mD-3qS" firstAttribute="trailing" secondItem="JqR-LA-yP9" secondAttribute="trailing" id="1fH-8u-AZZ"/>
+                            <constraint firstItem="Xao-me-35i" firstAttribute="bottom" secondItem="JqR-LA-yP9" secondAttribute="bottom" id="49z-oG-lIQ"/>
+                            <constraint firstItem="Xao-me-35i" firstAttribute="trailing" secondItem="JqR-LA-yP9" secondAttribute="trailing" id="KSK-hP-b3B"/>
+                            <constraint firstItem="Xao-me-35i" firstAttribute="top" secondItem="Hgp-mD-3qS" secondAttribute="bottom" id="Qu6-bm-ouR"/>
+                            <constraint firstItem="Xao-me-35i" firstAttribute="top" secondItem="Hgp-mD-3qS" secondAttribute="bottom" id="RzA-n8-J81"/>
+                            <constraint firstItem="Hgp-mD-3qS" firstAttribute="leading" secondItem="JqR-LA-yP9" secondAttribute="leading" id="dLb-JK-Ko9"/>
+                            <constraint firstItem="Xao-me-35i" firstAttribute="leading" secondItem="JqR-LA-yP9" secondAttribute="leading" id="oL8-bH-6FK"/>
+                            <constraint firstItem="Hgp-mD-3qS" firstAttribute="top" secondItem="JqR-LA-yP9" secondAttribute="top" id="sxp-1q-iF4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JqR-LA-yP9"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Xao-me-35i" id="8Em-sQ-t1K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HKX-Tv-IMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-180" y="36.431784107946029"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="baseline_refresh" width="48" height="48"/>
+    </resources>
+</document>
